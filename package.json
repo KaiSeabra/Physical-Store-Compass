@@ -1,0 +1,25 @@
+{
+  "name": "physical-store-compass",
+  "version": "1.0.0",
+  "description": "O projeto consiste no desenvolvimento de uma estrutura de uma Physical Store com Backend, utilizando as tecnologias e conhecimentos aprendidos no curso.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaiSeabra/Physical-Store-Compass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaiSeabra/Physical-Store-Compass/issues"
+  },
+  "homepage": "https://github.com/KaiSeabra/Physical-Store-Compass#readme",
+  "dependencies": {
+    "axios": "^1.8.1", 
+    "express": "^4.21.2",
+    "winston": "^3.17.0"
+  }
+}
