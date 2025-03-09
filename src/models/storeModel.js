@@ -70,7 +70,7 @@ const insertStore = (store) => {
     db.run(`INSERT INTO stores (name, address, city, state, zip_code, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?, ?)`, 
         [name, address, city, state, zip_code, latitude, longitude], (err) => {
             if (err) {
-                console.error('Error inserting store: ' + err.message);
+                logger.error(`Erro ao criar tabela: ${err.message}`);
             }
         });
 };

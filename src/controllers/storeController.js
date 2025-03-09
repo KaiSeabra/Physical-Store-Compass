@@ -6,6 +6,8 @@ const axios = require('axios');
 const findNearestStore = async (req, res) => {
     const userZip = req.body.cep;
 
+    logger.info(`Recebimento de um request para encontrar loja proxima a: ${userZip}`)
+
     try {
         const viaCepResponse = await axios.get(`https://viacep.com.br/ws/${userZip}/json/`);
         const userAddress = viaCepResponse.data;
@@ -36,7 +38,7 @@ const findNearestStore = async (req, res) => {
 
             const nearbyStores = stores.map(store => {
                 const distance = distanceService.calculateDistance(userLocation, { latitude: store.latitude, longitude: store.longitude });
-                console.log(`Distância de ${store.name} (${store.latitude}, ${store.longitude}) para o usuário: ${distance} km`);
+                logger.info(`Distância de ${store.name} (${store.latitude}, ${store.longitude}) para o usuário: ${distance} km`);
                 return { ...store, distance: parseFloat(distance.toFixed(2)) };
             }).filter(store => store.distance <= 100);
 
